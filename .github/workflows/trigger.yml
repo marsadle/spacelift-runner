@@ -1,0 +1,18 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: 0 3 * * *
+  workflow_dispatch:
+
+jobs:
+  trigger_docker:
+    name: Daily Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger build
+        run: curl -X POST ${{ secrets.DOCKERHUB_TRIGGER }}
