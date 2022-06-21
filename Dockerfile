@@ -5,7 +5,7 @@ USER root
 
 # Add CloudPosse's package repository
 ADD https://apk.cloudposse.com/ops@cloudposse.com.rsa.pub /etc/apk/keys/
-RUN echo "@cloudposse https://apk.cloudposse.com/3.11/vendor" >> /etc/apk/repositories
+RUN echo "@cloudposse https://apk.cloudposse.com/3.14/vendor" >> /etc/apk/repositories
 
 # Add bash and atmos
 RUN apk add -u bash atmos@cloudposse
